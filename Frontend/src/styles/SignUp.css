@@ -1,16 +1,29 @@
 .signup {
-    height: 90vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+  min-height: calc(100vh - 70px);
+  margin-top: 70px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+  padding: 2rem;
+  position: relative;
 }
 
 .login-link {
-    color: white;
-    position: absolute;
-    bottom: 150px;
+  color: #cbd5e1;
+  text-align: center;
+  margin-top: 1.5rem;
+  font-size: 0.95rem;
 }
 
 .link {
-    color: lightblue;
+  color: #60a5fa;
+  text-decoration: none;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+.link:hover {
+  color: #3b82f6;
+  text-decoration: underline;
 }
