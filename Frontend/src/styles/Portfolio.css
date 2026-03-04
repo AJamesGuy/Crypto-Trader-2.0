@@ -1,0 +1,275 @@
+.portfolio-container {
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Inter', sans-serif;
+    margin-top: 80px;
+}
+
+.portfolio-container-2 {
+    width: 100%;
+    max-width: 1200px;
+}
+
+.portfolio-container h1 {
+    font-size: 28px;
+    margin-bottom: 30px;
+    font-weight: 600;
+    color: silver;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+
+}
+
+
+.portfolio-overview {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 20px;
+    margin-bottom: 40px;
+}
+
+.overview-card {
+    background: #1e1e2f;
+    padding: 20px;
+    border-radius: 14px;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.25);
+    transition: 0.3s ease;
+}
+
+.overview-card:hover {
+    transform: translateY(-4px);
+}
+
+.overview-card h2 {
+    font-size: 14px;
+    color: #aaa;
+    margin-bottom: 10px;
+    font-weight: 500;
+}
+
+.overview-card .value {
+    font-size: 20px;
+    font-weight: 600;
+}
+
+.value.positive {
+    color: #4caf50;
+}
+
+.value.negative {
+    color: #f44336;;
+}
+
+.breakdown-section {
+    margin-top: 40px;
+    margin-bottom: 50px;
+}
+
+.breakdown-section h2 {
+    margin-bottom: 20px;
+    font-weight: 600;
+    color: silver;
+    text-align: center;
+    letter-spacing: 0.5px;
+}
+
+.breakdown-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.breakdown-item {
+    background: #1e1e2f;
+    padding: 15px;
+    border-radius: 12px;
+}
+
+.breakdown-bar {
+    height: 8px;
+    background: #2c2c44;
+    border-radius: 6px;
+    overflow: hidden;
+    margin-bottom: 8px;
+}
+
+
+.breakdown-fill {
+    height: 100%;
+    background: linear-gradient(80deg, #4facfe, #00f2fe);
+    transition: width 0.6s ease;
+}
+
+.breakdown-info {
+    display: flex;
+    justify-content: space-between;
+    font-size: 14px;
+}
+
+.breakdown-info .symbol {
+    font-weight: 600;
+}
+
+.holdings-section {
+    margin-top: 40px;
+}
+
+.holdings-section h2 {
+    margin-bottom: 20px;
+    font-weight: 600;
+    color: silver;
+    text-align: center;
+}
+
+.holdings-section p {
+    color: lightblue;
+    text-align: center;
+}
+
+.holdings-table {
+    overflow-x: auto;
+    background: #1e1e2f;
+    border-radius: 14px;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.25);
+    margin: 40px 0;
+}
+
+.holdings-table table {
+    width: 100%;
+    border-collapse: collapse;
+    min-width: 900px;
+}
+
+.holding-table th,
+.holdings-table td {
+    padding: 14px 16px;
+    text-align: left;
+}
+
+.holdings-table th {
+    font-size: 13px;
+    font-weight: 500;
+    color: #aaa;
+    border-bottom: 1px solid #2c2c44;
+}
+
+.holdings-table tbody tr {
+    transition: background 0.2 ease;
+}
+
+.holdings-table tbody tr:hover {
+    background: #2a2a40;
+}
+
+.holdings-table td {
+    font-size: 14px;
+}
+
+.symbol-cell {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.symbol-cell .icon {
+    width: 22px;
+    height: 22px;
+    border-radius: 50%;
+}
+
+.positive {
+    color: #4caf50;
+}
+
+.negative {
+    color: #f44336;
+}
+
+.asset-detail-modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.65);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+}
+
+.modal-content {
+    background: #1e1e2f;
+    padding: 30px;
+    border-radius: 16px;
+    width: 100%;
+    max-width: 500px;
+    position: relative;
+    animation: fadeIn 0.3s ease;
+}
+
+.modal-content h2 {
+    margin-bottom: 25px;
+}
+
+.close-btn {
+    position: absolute;
+    top: 15px;
+    right: 18px;
+    background: transparent;
+    border: none;
+    font-size: 22px;
+    color: #aaa;
+    cursor: pointer;
+    transition: 0.2s ease;
+}
+
+.close-btn:hover {
+    color: #ffffff;
+}
+
+.asset-stats {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 18px;
+}
+
+.asset-stats .stat {
+    display: flex;
+    flex-direction: column;
+}
+
+.asset-stats .label {
+    font-size: 12px;
+    color: #aaa;
+    margin-bottom: 4px;
+}
+
+.asset-stats .value {
+    font-size: 15px;
+    font-weight: 600;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: scale(0.95);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+@media (max-width: 768px) {
+    .asset-stats {
+        grid-template-columns: 1fr;
+    }
+
+    .portfolio-overview {
+        grid-template-columns: 1fr;
+    }
+}

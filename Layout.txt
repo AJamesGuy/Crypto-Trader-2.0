@@ -1,0 +1,37 @@
+Backend/
+    ├──app/
+    |    ├──__init__.py
+    |    ├── extensions.py
+    |    ├── models.py
+    |    ├── services/
+    |    |   ├── __init__.py
+    |    |   └── coindesk_service.py
+    |    └── blueprints/
+    |        ├── __init__.py         
+    |        ├── login/
+    |        │   ├── __init__.py
+    |        │   ├── routes.py
+    |        │   └── schema.py             
+    |        ├── dashboard/
+    |        │   ├── __init__.py
+    |        │   ├── routes.py
+    |        │   └── schema.py
+    |        ├── portfolio/
+    |        │   ├── __init__.py
+    |        │   ├── routes.py
+    |        │   └── schema.py
+    |        ├── settings/
+    |        │   ├── __init__.py
+    |        │   ├── routes.py
+    |        │   └── schema.py
+    |        └── trade/
+    |            ├── __init__.py
+    |            ├── routes.py
+    |            └── schema.py
+    ├── config.py
+    ├── run.py
+    ├── requirements.txt
+    ├── .env                # (API_KEY & SECRET_KEY)
+    └── instance/app.db
+
+Frontend

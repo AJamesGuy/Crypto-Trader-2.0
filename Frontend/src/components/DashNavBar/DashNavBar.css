@@ -1,0 +1,135 @@
+.dash-navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
+  background-color: #222;
+  color: white;
+  position: fixed;
+  width: 100%;
+  height: 60px;
+  top: 0;
+  z-index: 100;
+}
+
+.dash-nav-logo {
+  font-size: 20px;
+  font-weight: bold;
+  color: gold;
+  text-shadow: 0px 0px 5px rgba(0, 0, 0, 0.5);
+}
+
+.dash-nav-links {
+  display: flex;
+  gap: 15px;
+}
+
+.dash-nav-link {
+  color: rgba(255, 255, 255, 0.8);
+  text-transform: uppercase;
+  font-size: 12px;
+  letter-spacing: 2px;
+  padding: 8px 16px;
+  border-radius: 20px;
+  transition: background 0.3s ease, color 0.3s ease;
+}
+
+.dash-nav-link:hover {
+  background: rgba(255, 255, 255, 0.2);
+  color: white;
+}
+
+.dashboard-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+  background: rgba(22, 22, 22, 0.8);
+    color: white;
+    box-shadow: 0px 0px 10px rgba(0,0,0,0.75);
+}
+
+.nav-user {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.user-name {
+    margin-right: 20px;
+    padding: 20px;
+    color: white;
+    letter-spacing: 1px;
+    text-transform: capitalize;
+}
+
+.logout-btn {
+    width: 6vw;
+    height: auto;
+    color: white;
+    background-color: darkblue;
+}
+
+@media (max-width: 768px) {
+    .dash-navbar {
+        padding: 8px 15px;
+        height: 50px;
+    }
+
+    .dash-nav-logo {
+        font-size: 16px;
+    }
+
+    .dash-nav-links {
+        gap: 10px;
+    }
+
+    .dash-nav-link {
+        font-size: 11px;
+        padding: 6px 12px;
+    }
+
+    .user-name {
+        margin-right: 10px;
+        padding: 10px;
+        font-size: 13px;
+    }
+
+    .logout-btn {
+        width: auto;
+        padding: 6px 12px;
+        font-size: 12px;
+    }
+}
+
+@media (max-width: 480px) {
+    .dash-navbar {
+        padding: 6px 10px;
+        height: 45px;
+        flex-wrap: wrap;
+    }
+
+    .dash-nav-logo {
+        font-size: 14px;
+    }
+
+    .dash-nav-links {
+        gap: 5px;
+    }
+
+    .dash-nav-link {
+        font-size: 10px;
+        padding: 5px 8px;
+    }
+
+    .user-name {
+        margin-right: 5px;
+        padding: 5px;
+        font-size: 11px;
+    }
+
+    .logout-btn {
+        padding: 5px 10px;
+        font-size: 11px;
+    }
+}

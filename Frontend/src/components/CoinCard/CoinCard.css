@@ -1,0 +1,181 @@
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f5f5f5;
+    margin: 0;
+    padding: 0;
+}
+
+.coin-card {
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    padding: 16px;
+    text-align: center;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.coin-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.coin-header {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    margin-bottom: 12px;
+}
+
+.coin-icon {
+    width: 32px;
+    height: 32px;
+}
+
+.coin-info {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.coin-name {
+    font-size: 16px;
+    font-weight: bold;
+    color: #333;
+}
+
+.coin-symbol {
+    font-size: 12px;
+    color: #777;
+}
+
+.coin-rank {
+    font-size: 12px;
+    color: #777;
+    margin-top: 4px;
+}
+
+.coin-price {
+    font-size: 18px;
+    font-weight: bold;
+    color: #333;
+    margin-top: 8px;
+}
+
+.price {
+    font-size: 14px;
+    margin-top: 4px;
+}
+
+.change {
+    font-size: 14px;
+    margin-top: 4px;
+}
+
+.positive {
+    color: green;
+}
+
+.negative {
+    color: red;
+}
+
+.coin-description {
+    font-size: 12px;
+    color: #555;
+    margin-top: 8px;
+}
+
+.coin-stats {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 12px;
+}
+
+.stat {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.label  {
+    font-size: 12px;
+    color: #777;
+}
+
+.value {
+    font-size: 14px;
+    font-weight: bold;
+    color: #333;
+}
+
+@media (max-width: 768px) {
+    .coin-card {
+        padding: 12px;
+    }
+
+    .coin-header {
+        gap: 8px;
+        margin-bottom: 8px;
+    }
+
+    .coin-icon {
+        width: 28px;
+        height: 28px;
+    }
+
+    .coin-name {
+        font-size: 14px;
+    }
+
+    .coin-symbol {
+        font-size: 11px;
+    }
+
+    .coin-price {
+        font-size: 16px;
+    }
+
+    .coin-stats {
+        margin-top: 8px;
+    }
+}
+
+@media (max-width: 480px) {
+    .coin-card {
+        padding: 10px;
+    }
+
+    .coin-header {
+        gap: 6px;
+    }
+
+    .coin-icon {
+        width: 24px;
+        height: 24px;
+    }
+
+    .coin-name {
+        font-size: 12px;
+    }
+
+    .coin-symbol {
+        font-size: 10px;
+    }
+
+    .coin-price {
+        font-size: 14px;
+    }
+
+    .coin-rank {
+        font-size: 10px;
+    }
+
+    .label {
+        font-size: 10px;
+    }
+
+    .value {
+        font-size: 12px;
+    }
+}

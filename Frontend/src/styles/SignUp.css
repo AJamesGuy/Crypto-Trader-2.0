@@ -1,0 +1,16 @@
+.signup {
+    height: 90vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.login-link {
+    color: white;
+    position: absolute;
+    bottom: 150px;
+}
+
+.link {
+    color: lightblue;
+}

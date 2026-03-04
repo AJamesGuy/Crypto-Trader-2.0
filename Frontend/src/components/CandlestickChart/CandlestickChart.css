@@ -1,0 +1,46 @@
+.candlestick-container {
+  width: 100%;
+  max-width: 100%;
+}
+
+.candlestick-container .recharts-wrapper {
+  outline: none;
+}
+
+.candlestick-container .recharts-surface {
+  background: transparent;
+}
+
+.candlestick-container .recharts-cartesian-axis-tick text {
+  fill: #9ca3af;
+  font-size: 12px;
+}
+
+.candlestick-container .recharts-legend-wrapper {
+  margin-top: 20px !important;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .candlestick-container {
+    padding: 0;
+  }
+
+  .candlestick-container .grid {
+    grid-template-columns: repeat(2, 1fr) !important;
+  }
+}
+
+@media (max-width: 640px) {
+  .candlestick-container .bg-gray-900 {
+    padding: 1rem !important;
+  }
+
+  .candlestick-container .grid {
+    grid-template-columns: 1fr !important;
+  }
+
+  .candlestick-container .recharts-cartesian-axis-tick text {
+    font-size: 10px;
+  }
+}

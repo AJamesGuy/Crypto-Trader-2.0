@@ -1,0 +1,209 @@
+.trade-chart {
+    background-color: rgba(0, 0, 0, 0.2);
+    backdrop-filter: blur(40px);
+    padding: 24px;
+    border-radius: 16px;
+    color: white;
+    font-size: 20px;
+    font-weight: 900;
+    width: 100%;
+    max-width: 900px;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+    font-family: 'Inter', sans-serif;
+}
+
+.chart-title {
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    text-align: center;
+    font-size: 20px;
+    font-weight: 600;
+    margin-bottom: 20px;
+}
+
+.chart-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 250px;
+    padding: 10px 0;
+    gap: 20px;
+}
+
+.chart-bar-group {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    flex: 1;
+}
+
+.chart-bar-wrapper {
+    width: 50px;
+    height: 100%;
+    display: flex;
+    align-items: flex-end;
+}
+
+.chart-bar {
+    width: 100%;
+    background: linear-gradient(180deg, #4facf2 0%, #00f2fe 100%);
+    border-radius: 8px 8px 4px 4px;
+    position: relative;
+    transition: all 0.4s ease;
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+}
+
+.chart-bar:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 242, 254, 0.4);
+}
+
+.bar-value {
+    position: absolute;
+    top: -22px;
+    font-size: 12px;
+    font-weight: 500;
+    color: #ffffff;
+}
+
+.chart-label {
+    margin-top: 10px;
+    text-align: center;
+}
+
+.symbol {
+    display: block;
+    font-weight: 600;
+    font-size: 14px;
+}
+
+.percentage {
+    font-size: 12px;
+    color: #bbbbbb;
+}
+
+.chart-stats {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 30px;
+    padding-top: 20px;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.stat {
+    display: flex;
+    flex-direction: column;
+}
+
+.stat .label {
+    font-size: 13px;
+    color: #aaaaaa;
+    margin-bottom: 4px;
+}
+
+.stat .value {
+    font-size: 16px;
+    font-weight: 600;
+}
+
+.value.position {
+    color: #4caf50;
+}
+
+.value.negative {
+    color: #f44336;
+}
+
+@media (max-width: 768px) {
+    .trade-chart {
+        padding: 16px;
+        max-width: 100%;
+    }
+
+    .chart-title {
+        font-size: 16px;
+    }
+
+    .chart-container {
+        height: 200px;
+        gap: 15px;
+    }
+
+    .chart-bar-wrapper {
+        width: 40px;
+    }
+
+    .bar-value {
+        font-size: 11px;
+        top: -20px;
+    }
+
+    .chart-label .symbol {
+        font-size: 12px;
+    }
+
+    .chart-label .percentage {
+        font-size: 11px;
+    }
+
+    .chart-stats {
+        flex-direction: column;
+        gap: 12px;
+        padding-top: 15px;
+    }
+
+    .stat .label {
+        font-size: 12px;
+    }
+
+    .stat .value {
+        font-size: 15px;
+    }
+}
+
+@media (max-width: 480px) {
+    .trade-chart {
+        padding: 12px;
+    }
+
+    .chart-title {
+        font-size: 14px;
+    }
+
+    .chart-container {
+        height: 150px;
+        gap: 10px;
+    }
+
+    .chart-bar-wrapper {
+        width: 30px;
+    }
+
+    .bar-value {
+        font-size: 9px;
+        top: -18px;
+    }
+
+    .chart-label .symbol {
+        font-size: 11px;
+    }
+
+    .chart-label .percentage {
+        font-size: 10px;
+    }
+
+    .chart-stats {
+        gap: 10px;
+        padding-top: 12px;
+    }
+
+    .stat .label {
+        font-size: 11px;
+    }
+
+    .stat .value {
+        font-size: 13px;
+    }
+}

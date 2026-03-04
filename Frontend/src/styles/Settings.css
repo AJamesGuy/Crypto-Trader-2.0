@@ -1,0 +1,201 @@
+.settings-container {
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.settings-container h1 {
+    text-transform: uppercase;
+    color: silver;
+    letter-spacing: 2px;
+}
+
+.message {
+    text-align: center;
+    color: white;
+}
+
+
+.settings-tabs {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+
+.settings-tabs button {
+    font-size: 15px;
+    margin: 10px;
+    border: 1px solid black;
+    padding: 10px;
+    border-radius: 15px;
+    text-align: center;
+    background-color: lightblue;
+    color: black;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.settings-section {
+    color: white;
+    text-transform: uppercase;
+    font-weight: 500;
+    padding: 20px;
+}
+
+.security-section h2 {
+    text-align: center;
+}
+
+.profile-section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.submit-btn {
+    height: 5vh;
+    width: 8vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 15px;
+
+}
+
+.setting-form {
+    align-content: center;
+}
+
+.subsection {
+    min-height: auto;
+    min-width: auto;
+    padding: 25px;
+}
+
+.subsection h3 {
+    text-align: center;
+}
+
+.reset-btn {
+    height: 5vh;
+    width: 8vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: lightgoldenrodyellow;
+    background-color: black;
+    border-radius: 5px;
+}
+
+
+.danger-section {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: red;
+}
+
+.delete-btn {
+    height: 5vh;
+    width: 8vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 15px;
+    background-color: lightblue;
+    color: black;
+}
+
+@media (max-width: 768px) {
+    .settings-container {
+        padding: 20px;
+    }
+
+    .settings-tabs {
+        flex-wrap: wrap;
+        gap: 10px;
+    }
+
+    .settings-tabs button {
+        font-size: 13px;
+        padding: 8px 12px;
+        min-height: 36px;
+    }
+
+    .settings-section {
+        padding: 15px;
+    }
+
+    .submit-btn,
+    .reset-btn,
+    .delete-btn {
+        height: auto;
+        width: auto;
+        padding: 10px 20px;
+        min-height: 40px;
+        font-size: 13px;
+    }
+}
+
+@media (max-width: 480px) {
+    .settings-container {
+        padding: 10px;
+    }
+
+    .settings-container h1 {
+        font-size: 18px;
+    }
+
+    .settings-tabs {
+        flex-direction: column;
+        gap: 8px;
+    }
+
+    .settings-tabs button {
+        font-size: 12px;
+        padding: 8px 10px;
+        width: 100%;
+        min-height: 40px;
+    }
+
+    .settings-section {
+        padding: 12px;
+    }
+
+    .settings-section h2 {
+        font-size: 16px;
+    }
+
+    .subsection {
+        padding: 15px;
+    }
+
+    .subsection h3 {
+        font-size: 14px;
+    }
+
+    .submit-btn,
+    .reset-btn,
+    .delete-btn {
+        width: 100%;
+        padding: 10px 15px;
+        min-height: 40px;
+        font-size: 12px;
+    }
+
+    .form-group {
+        margin-bottom: 12px;
+    }
+
+    input,
+    textarea {
+        font-size: 14px;
+        min-height: 40px;
+    }
+}

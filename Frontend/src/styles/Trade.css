@@ -1,0 +1,473 @@
+/* Trade Page Styles */
+
+.trade-container {
+  min-height: 100vh;
+  background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+  color: #f1f5f9;
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+/* Trade Header */
+.trade-header {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  margin-bottom: 0.5rem;
+  border-bottom: 2px solid #475569;
+  padding-bottom: 1.5rem;
+}
+
+.trade-header h1 {
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin: 0;
+  background: linear-gradient(135deg, #60a5fa, #3b82f6);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.trade-header .subtitle {
+  font-size: 1rem;
+  color: #94a3b8;
+  margin: 0;
+}
+
+/* Trade Main Content */
+.trade-main {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 2rem;
+  flex: 1;
+  min-height: 500px;
+}
+
+/* Trade Chart Section */
+.trade-chart-section {
+  background: linear-gradient(135deg, #1e293b 0%, #0f172a 100%);
+  border: 1px solid #334155;
+  border-radius: 12px;
+  padding: 1.5rem;
+  overflow: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.3);
+}
+
+.chart-loading {
+  text-align: center;
+  color: #94a3b8;
+  font-size: 1rem;
+  padding: 2rem;
+}
+
+/* Trade Panel */
+.trade-panel {
+  background: linear-gradient(135deg, #1e293b 0%, #0f172a 100%);
+  border: 1px solid #334155;
+  border-radius: 12px;
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.3);
+  max-height: 600px;
+  overflow-y: auto;
+}
+
+/* Crypto Selector Section */
+.crypto-selector-section {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.crypto-selector-section label {
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: #cbd5e1;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.crypto-selector-section select {
+  padding: 0.75rem;
+  background-color: #0f172a;
+  border: 2px solid #334155;
+  border-radius: 8px;
+  color: #f1f5f9;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-weight: 500;
+}
+
+.crypto-selector-section select:hover {
+  border-color: #475569;
+  background-color: #1e293b;
+}
+
+.crypto-selector-section select:focus {
+  outline: none;
+  border-color: #3b82f6;
+  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
+}
+
+/* Message Box */
+.message-box {
+  padding: 1rem;
+  border-radius: 8px;
+  font-size: 0.95rem;
+  font-weight: 500;
+  animation: slideIn 0.3s ease;
+}
+
+.message-box.success {
+  background-color: rgba(34, 197, 94, 0.1);
+  border: 1px solid #22c55e;
+  color: #86efac;
+}
+
+.message-box.error {
+  background-color: rgba(239, 68, 68, 0.1);
+  border: 1px solid #ef4444;
+  color: #fca5a5;
+}
+
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Trading Section */
+.trading-section {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  flex: 1;
+}
+
+/* Crypto Detail Card */
+.crypto-detail-card {
+  background: linear-gradient(135deg, #0f172a 0%, rgba(15, 23, 42, 0.5) 100%);
+  border: 1px solid #334155;
+  border-radius: 8px;
+  padding: 1rem;
+  overflow: hidden;
+}
+
+/* Order Form Card */
+.order-form-card {
+  background: linear-gradient(135deg, #0f172a 0%, rgba(15, 23, 42, 0.5) 100%);
+  border: 1px solid #334155;
+  border-radius: 8px;
+  padding: 1rem;
+  overflow: auto;
+  flex: 1;
+}
+
+/* Orders Panel */
+.orders-panel {
+  background: linear-gradient(135deg, #1e293b 0%, #0f172a 100%);
+  border: 1px solid #334155;
+  border-radius: 12px;
+  padding: 2rem;
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.3);
+}
+
+.orders-panel h2 {
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin: 0 0 1.5rem 0;
+  color: #e2e8f0;
+}
+
+.no-orders {
+  text-align: center;
+  color: #94a3b8;
+  padding: 2rem;
+  font-style: italic;
+}
+
+/* Orders Table Wrapper */
+.orders-table-wrapper {
+  overflow-x: auto;
+  border-radius: 8px;
+  border: 1px solid #334155;
+}
+
+.orders-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.95rem;
+}
+
+.orders-table thead {
+  background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+  border-bottom: 2px solid #475569;
+}
+
+.orders-table th {
+  padding: 1rem;
+  text-align: left;
+  font-weight: 600;
+  color: #cbd5e1;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  font-size: 0.875rem;
+}
+
+.orders-table tbody tr {
+  border-bottom: 1px solid #334155;
+  transition: background-color 0.2s ease;
+}
+
+.orders-table tbody tr:hover {
+  background-color: rgba(59, 130, 246, 0.05);
+}
+
+.orders-table td {
+  padding: 1rem;
+  color: #e2e8f0;
+}
+
+/* Order Type Classes */
+.type-buy {
+  color: #22c55e;
+  font-weight: 600;
+}
+
+.type-sell {
+  color: #ef4444;
+  font-weight: 600;
+}
+
+/* Order Status Classes */
+.status-pending {
+  background-color: rgba(245, 158, 11, 0.1);
+  color: #fbbf24;
+  padding: 0.25rem 0.75rem;
+  border-radius: 4px;
+  display: inline-block;
+  font-weight: 500;
+}
+
+.status-completed {
+  background-color: rgba(34, 197, 94, 0.1);
+  color: #86efac;
+  padding: 0.25rem 0.75rem;
+  border-radius: 4px;
+  display: inline-block;
+  font-weight: 500;
+}
+
+.status-cancelled {
+  background-color: rgba(239, 68, 68, 0.1);
+  color: #fca5a5;
+  padding: 0.25rem 0.75rem;
+  border-radius: 4px;
+  display: inline-block;
+  font-weight: 500;
+}
+
+/* Action Buttons */
+.actions {
+  text-align: center;
+}
+
+.action-buttons {
+  display: flex;
+  gap: 0.5rem;
+  justify-content: center;
+}
+
+.btn-execute,
+.btn-cancel {
+  padding: 0.5rem 1rem;
+  border: none;
+  border-radius: 6px;
+  font-size: 0.875rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  white-space: nowrap;
+}
+
+.btn-execute {
+  background-color: #22c55e;
+  color: #f1f5f9;
+}
+
+.btn-execute:hover:not(:disabled) {
+  background-color: #16a34a;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 16px rgba(34, 197, 94, 0.2);
+}
+
+.btn-cancel {
+  background-color: #ef4444;
+  color: #f1f5f9;
+}
+
+.btn-cancel:hover:not(:disabled) {
+  background-color: #dc2626;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 16px rgba(239, 68, 68, 0.2);
+}
+
+.btn-execute:disabled,
+.btn-cancel:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+/* Pagination */
+.pagination {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  margin-top: 1.5rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid #334155;
+}
+
+.pagination button {
+  padding: 0.75rem 1.5rem;
+  background-color: #3b82f6;
+  color: #f1f5f9;
+  border: none;
+  border-radius: 6px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.pagination button:hover:not(:disabled) {
+  background-color: #2563eb;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 16px rgba(59, 130, 246, 0.2);
+}
+
+.pagination button:disabled {
+  background-color: #64748b;
+  cursor: not-allowed;
+  opacity: 0.5;
+}
+
+.page-info {
+  color: #cbd5e1;
+  font-weight: 500;
+  min-width: 120px;
+  text-align: center;
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+  .trade-main {
+    grid-template-columns: 1fr;
+    min-height: auto;
+  }
+
+  .trade-panel {
+    max-height: none;
+  }
+
+  .trade-header h1 {
+    font-size: 2rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .trade-container {
+    padding: 1rem;
+    gap: 1.5rem;
+  }
+
+  .trade-header {
+    padding-bottom: 1rem;
+  }
+
+  .trade-header h1 {
+    font-size: 1.75rem;
+  }
+
+  .trade-panel {
+    padding: 1.5rem;
+  }
+
+  .orders-panel {
+    padding: 1.5rem;
+  }
+
+  .orders-table {
+    font-size: 0.85rem;
+  }
+
+  .orders-table th,
+  .orders-table td {
+    padding: 0.75rem 0.5rem;
+  }
+
+  .action-buttons {
+    flex-direction: column;
+    gap: 0.25rem;
+  }
+
+  .btn-execute,
+  .btn-cancel {
+    padding: 0.4rem 0.8rem;
+    font-size: 0.75rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .trade-container {
+    padding: 0.75rem;
+    gap: 1rem;
+  }
+
+  .trade-header h1 {
+    font-size: 1.5rem;
+  }
+
+  .trade-header .subtitle {
+    font-size: 0.875rem;
+  }
+
+  .trade-panel {
+    padding: 1rem;
+    gap: 1rem;
+  }
+
+  .orders-table {
+    font-size: 0.8rem;
+  }
+
+  .orders-table th,
+  .orders-table td {
+    padding: 0.5rem 0.25rem;
+  }
+
+  .pagination {
+    flex-wrap: wrap;
+    gap: 0.5rem;
+  }
+
+  .page-info {
+    order: 3;
+    flex-basis: 100%;
+  }
+}

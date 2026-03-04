@@ -1,0 +1,89 @@
+ToDo:
+1. Test all Routes
+	- login
+	- dashboard
+	- portfolio
+	- settings
+	- trade
+DONE.
+
+User Story:
+The landing page will be a login/Sign up page. The user will have the ability to sign up if they do not already have an account. After signing up and/or logging in, the user will be led to a Dashboard/Markets Overview showing the real-time market stats for the top/most popular cryptocurrencies. The dashboard will include cards or a table with a chart displaying price, 24h/7d change, market cap, and volume. Their will be a quick-search bar for coins on the dashboard for finding specific cryptocurrencies. The user will have quick links to access their portfolio, trading(buy/sell), and settings page through the navbar. The navbar will have a layout of "Dashboard" (list of coins with live data), "Trade" (buy/sell interface), "Portfolio", "Settings"(dropdown:profile, reset balance, logout). A users portfolio will provide information including users' crypto asset cards, tracking balances and performance of live investments, a live price chart displaying an interactive graph with time filters for 1D, 1W, 1M, 1Y, and a data table detailing metrics including price, 24h/7d changes and market cap for all invested cryptocurrencies. Through the Trade (buy/sell) page, a coin selector will be availbe to the user, alongside charts, an order form, and order history on the page. The Settings tab will provide access to edit the users' profile, updating or deleting their account, reseting their balance, or logging out.
+
+Dashboard.jsx
+- Get Cryptos (/dash)
+- Get Market Data (/dash)
+- Search Cryptos (/dash)
+- Get Specific Crypto Market Data (/dash)
+- Get Cash Balance (/dash)
+
+Login.jsx
+- Login (/auth)
+
+Portfolio.jsx
+- Get Portolio (/porfolio)
+- Get Holdings (/portfolio)
+- Get Performance (/portfolio)
+- Get Breakdown (/portfolio)
+- Get All Assets (/portfolio)
+- Get Asset (/portfolio)
+
+Settings.jsx
+- Logout (/auth)
+- Get Profile (/settings)
+- Update Profile (/settings)
+- Change Password (/settings)
+- Reset Balance (/settings)
+- Delete Account (/settings)
+- Get All Settings (/settings)
+- Get Security Settings (/settings)
+
+Signup.jsx
+- Signup (/auth)
+
+Trade.jsx
+- Place Order (/trade)
+- Execute Order (/trade)
+- Get Orders (/trade)
+- Get Specific Order (/trade)
+- Cancel Order (/trade)
+
+Scrap Thoughts - CryptoTemple
+
+***The dashboard will include cards or a table with a chart displaying price, 24h/7d change, market cap, and volume.***
+
+***Their will be a quick-search bar for coins on the dashboard for finding specific cryptocurrencies.***
+
+***The navbar will have a layout of "Dashboard" (list of coins with live data), "Trade" (buy/sell interface), "Portfolio", "Settings"(dropdown:profile, reset balance, logout).***
+
+***A users portfolio will provide information including users' crypto asset cards, tracking balances and performance of live investments, a live price chart displaying an interactive graph with time filters for 1D, 1W, 1M, 1Y, and a data table detailing metrics including price, 24h/7d changes and market cap for all invested cryptocurrencies.***
+
+***Through the Trade (buy/sell) page, a coin selector will be availbe to the user, alongside charts, an order form, and order history on the page.***
+
+
+***The Settings tab will provide access to edit the users' profile, updating or deleting their account, reseting their balance, or logging out.***
+
+Token Expiration time
+
+APSchedular for coingecko live market updates
+
+Needed Components...
+Component ideas:
+NavBar - Login/Signup
+NavBar - DashBoard
+SignUpForm
+LoginPortal
+CoinCard
+OrderForm
+TradeChart
+SearchBar
+
+Pages
+- Login (components: LoginPortal, Navbar- Login/SignUp)
+- SignUp (components: NavBar - Login/SignUp, SignUpForm)
+- DashBoard (components: TradeChart, SearchBar, CoinCard(s), NavBar - Dashboard)
+- Portfolio (components: TradeChart, CoinCard, etc.)
+- Settings (components: etc.)
+- Trade (components: etc.)
+
+
