@@ -60,7 +60,7 @@ const SearchBar = ({ onSearch, token }) => {
             >
               <img src={crypto.image} alt={crypto.symbol} className="result-icon" />
               <div className="result-info">
-                <span className="result-name">{crypto.name}</span>
+                <span className="result-name">{crypto.description || crypto.name}</span>
                 <span className="result-symbol">{crypto.symbol?.toUpperCase()}</span>
               </div>
             </div>

@@ -204,6 +204,7 @@
   letter-spacing: 0.05em;
   width: 100%;
   min-height: 44px;
+  line-height: 1.5;
 }
 
 .submit-btn {
@@ -244,6 +245,15 @@
 .delete-btn:disabled {
   opacity: 0.5;
   cursor: not-allowed;
+}
+
+.cancel-btn {
+  background-color: #64748b;
+  color: #f1f5f9;
+  line-height: 1.5;
+  width: 5rem;
+  border-radius: 8px;
+  border: none;
 }
 
 /* Danger Section */

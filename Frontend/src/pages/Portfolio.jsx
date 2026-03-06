@@ -86,8 +86,9 @@ const Portfolio = () => {
           <span className="value">${portfolio.cash_balance?.toFixed(2)}</span>
         </div>
       </div>
-
+      <div className="performance-section">
       {performance && <TradeChart data={performance} />}
+      </div>
 
       {breakdown && (
         <div className="breakdown-section">

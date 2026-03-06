@@ -52,4 +52,4 @@ const CoinCard = ({ crypto, onSelect }) => {
   )
 }
 
-export default CoinCard
+export default CoinCard;

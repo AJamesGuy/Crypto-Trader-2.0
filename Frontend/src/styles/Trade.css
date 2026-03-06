@@ -262,6 +262,7 @@
   border-radius: 4px;
   display: inline-block;
   font-weight: 500;
+  margin-top: 1.5rem;
 }
 
 .status-completed {
@@ -308,6 +309,7 @@
 .btn-execute {
   background-color: #22c55e;
   color: #f1f5f9;
+  line-height: 1.5;
 }
 
 .btn-execute:hover:not(:disabled) {
@@ -319,6 +321,7 @@
 .btn-cancel {
   background-color: #ef4444;
   color: #f1f5f9;
+  line-height: 1.5;
 }
 
 .btn-cancel:hover:not(:disabled) {
@@ -354,6 +357,7 @@
   font-weight: 600;
   cursor: pointer;
   transition: all 0.3s ease;
+  line-height: 1.5;
 }
 
 .pagination button:hover:not(:disabled) {
@@ -373,6 +377,7 @@
   font-weight: 500;
   min-width: 120px;
   text-align: center;
+  line-height: 1.5;
 }
 
 /* Responsive Design */

@@ -449,6 +449,14 @@
 
 }
 
+.performance-section {
+    margin-bottom: 40px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+}
 
 .portfolio-overview {
     display: grid;
