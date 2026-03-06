@@ -60,6 +60,7 @@
   letter-spacing: 0.05em;
   font-size: 0.875rem;
   position: relative;
+  line-height: 1.5;
 }
 
 .settings-tabs button::after {

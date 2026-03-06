@@ -1,0 +1,128 @@
+Additional Recommendations
+
+Data Population: Your backend needs a mechanism (e.g., a scheduled task using Celery or cron) to periodically fetch and insert OHLCV data from CoinGecko into MarketData. For example, use the CoinGecko API to get historical data and update the DB.
+Granularity: If your MarketData has varying intervals, consider aggregating data for longer timeframes to reduce points (e.g., daily candles from hourly data).
+Testing: Ensure your DB has timestamped OHLCV entries for the cryptos. Test the endpoint with tools like Postman, passing valid timeframe params.
+Import: Add from datetime import timedelta at the top of routes.py if not already present.
+
+
+Route:
+http://127.0.0.1:5000/dash/cryptos
+
+response-JSON:
+[
+  {
+    "created_at": "2026-03-06T06:07:32.211436",
+    "description": "Bitcoin",
+    "id": 1,
+    "image": "https://coin-images.coingecko.com/coins/images/1/large/bitcoin.png?1696501400",
+    "is_active": true,
+    "symbol": "BTC"
+  },
+  {
+    "created_at": "2026-03-06T06:07:32.216435",
+    "description": "Ethereum",
+    "id": 2,
+    "image": "https://coin-images.coingecko.com/coins/images/279/large/ethereum.png?1696501628",
+    "is_active": true,
+    "symbol": "ETH"
+  },
+  {
+    "created_at": "2026-03-06T06:07:32.217436",
+    "description": "Tether",
+    "id": 3,
+    "image": "https://coin-images.coingecko.com/coins/images/325/large/Tether.png?1696501661",
+    "is_active": true,
+    "symbol": "USDT"
+  },
+  {
+    "created_at": "2026-03-06T06:07:32.219409",
+    "description": "BNB",
+    "id": 4,
+    "image": "https://coin-images.coingecko.com/coins/images/825/large/bnb-icon2_2x.png?1696501970",
+    "is_active": true,
+    "symbol": "BNB"
+  },
+  {
+    "created_at": "2026-03-06T06:07:32.221409",
+    "description": "XRP",
+    "id": 5,
+    "image": "https://coin-images.coingecko.com/coins/images/44/large/xrp-symbol-white-128.png?1696501442",
+    "is_active": true,
+    "symbol": "XRP"
+  }, etc... ]
+
+
+Route:
+http://127.0.0.1:5000/dash/market-data
+
+response-JSON:
+  [
+  {
+    "change_24h": -2.63,
+    "change_7d": 3.84,
+    "close": 70340.0,
+    "crypto_id": 1,
+    "high": 73434.0,
+    "id": 5601,
+    "image": "https://coin-images.coingecko.com/coins/images/1/large/bitcoin.png?1696501400",
+    "low": 70178.0,
+    "market_cap": 1405517585378.0,
+    "market_cap_rank": 1,
+    "name": "Bitcoin",
+    "open": 70340.0,
+    "price": 70340.0,
+    "symbol": "BTC",
+    "timestamp": "2026-03-06T06:21:32.115456",
+    "volume": 52508167942.0
+  }, etc... ]
+
+Route:
+http://127.0.0.1:5000/dash/search?query=XRP
+
+response-JSON:
+[
+    {
+        "created_at": "2026-03-06T06:07:32.221409",
+        "description": "XRP",
+        "id": 5,
+        "image": "https://coin-images.coingecko.com/coins/images/44/large/xrp-symbol-white-128.png?1696501442",
+        "is_active": true,
+        "symbol": "XRP"
+    }
+]
+
+Route:
+http://127.0.0.1:5000/dash/market-data/4
+
+response-JSON:
+{
+    "ath": 1369.99,
+    "ath_date": "2025-10-13T08:41:24.131000",
+    "change_24h": -1.24,
+    "change_7d": 2.05,
+    "circulating_supply": 136358504.87,
+    "close": 644.8,
+    "crypto_id": 4,
+    "high": 664.51,
+    "id": 6404,
+    "image": "https://coin-images.coingecko.com/coins/images/825/large/bnb-icon2_2x.png?1696501970",
+    "low": 642.96,
+    "market_cap": 87919893837.0,
+    "name": "BNB",
+    "open": 644.8,
+    "price": 644.8,
+    "symbol": "BNB",
+    "timestamp": "2026-03-06T06:23:32.138325",
+    "total_supply": 136358504.87,
+    "volume": 1046253947.0
+}
+
+Route:
+http://127.0.0.1:5000/dash/2/cash-balance
+
+response-JSON:
+{
+    "cash_balance": 10000.0,
+    "user_id": 2
+}

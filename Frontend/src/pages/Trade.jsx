@@ -15,8 +15,6 @@ const Trade = () => {
   const [message, setMessage] = useState('')
   const [page, setPage] = useState(1)
   const [totalOrders, setTotalOrders] = useState(0)
-  const [candleData, setCandleData] = useState([])
-  const [candleLoading, setCandleLoading] = useState(false)
 //   const [formData, setFormData] = useState({});
 
   useEffect(() => {
@@ -57,21 +55,8 @@ const Trade = () => {
       const data = await dashboardAPI.getCryptoMarketData(cryptoId)
       setSelectedCrypto(data)
       setMessage('')
-      
-      // Fetch candlestick data
-      setCandleLoading(true)
-      try {
-        const candleData = await dashboardAPI.getCandleData(cryptoId, '24h')
-        setCandleData(candleData || [])
-      } catch (err) {
-        console.error('Error fetching candle data:', err)
-        setCandleData([])
-      } finally {
-        setCandleLoading(false)
-      }
     } catch (err) {
       setMessage('Error fetching crypto details')
-      setCandleData([])
     }
   }
 
@@ -140,17 +125,14 @@ const Trade = () => {
 
       <div className="trade-main">
         <div className="trade-chart-section">
-          {selectedCrypto ? (
-            !candleLoading && candleData.length > 0 ? (
-              <CandlestickChart 
-                data={candleData} 
-                cryptoName={selectedCrypto.name || selectedCrypto.symbol}
-                timeframe="24h"
-              />
-            ) : (
-              <div className="chart-loading">Loading chart data...</div>
-            )
-          ) : null}
+          {selectedCrypto && (
+            <CandlestickChart 
+              cryptoId={selectedCrypto.id}
+              timeframe="24h"
+              width={800}
+              height={400}
+            />
+          )}
         </div>
 
         <div className="trade-panel">
@@ -158,7 +140,7 @@ const Trade = () => {
             <label htmlFor="crypto-select">Select Cryptocurrency</label>
             <select 
               id="crypto-select"
-              onChange={(e) => handleCryptoSelect(e.target.value)}
+              onChange={(e) => handleCryptoSelect(parseInt(e.target.value))}
               value={selectedCrypto?.id || ''}
             >
               <option value="">Choose a cryptocurrency...</option>

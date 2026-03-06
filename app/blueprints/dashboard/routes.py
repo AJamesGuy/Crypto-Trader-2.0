@@ -4,7 +4,7 @@ from marshmallow import ValidationError
 from . import dashboard_bp
 from app.models import db, Cryptocurrency, MarketData, User
 from .schemas import crypto_schema, cryptos_schema, market_data_schema, market_data_list_schema, search_query_schema
-from datetime import datetime
+from datetime import datetime, timedelta
 from app.util.auth import token_required
 from sqlalchemy import or_, and_
 
@@ -110,6 +110,7 @@ def get_crypto_market_data(crypto_id):
     return jsonify(result), 200
 
 
+
 # Get candlestick data for a specific cryptocurrency
 @dashboard_bp.route('/market-data/<int:crypto_id>/candles', methods=['GET'])
 @limiter.limit("20 per minute")
@@ -123,17 +124,51 @@ def get_candlestick_data(crypto_id):
     # Get timeframe from query params (default: 24h)
     timeframe = request.args.get('timeframe', '24h')
     
-    # Query market data ordered by timestamp descending
-    market_data = MarketData.query.filter_by(
+    # Map timeframe to timedelta
+    if timeframe == '24h':
+        delta = timedelta(hours=24)
+    elif timeframe == '7d':
+        delta = timedelta(days=7)
+    elif timeframe == '30d':
+        delta = timedelta(days=30)
+    elif timeframe == '1y':
+        delta = timedelta(days=365)
+    else:
+        return jsonify({"message": "Invalid timeframe. Supported: 24h, 7d, 30d, 1y"}), 400
+    
+    # Calculate the start time
+    start_time = datetime.utcnow() - delta
+    
+    # Determine limit based on timeframe (optional, to prevent too much data)
+    # For example, assuming data points are roughly daily or hourly; adjust as needed
+    if timeframe == '24h':
+        limit = 24 * 4  # e.g., if 15-min intervals, but adjust based on your data granularity
+    elif timeframe == '7d':
+        limit = 7 * 24  # hourly for a week
+    elif timeframe == '30d':
+        limit = 30 * 24
+    elif timeframe == '1y':
+        limit = 365  # daily for a year
+    else:
+        limit = None  # or set a max, e.g., 1000
+    
+    # Query market data filtered by timeframe, ordered by timestamp ascending
+    query = MarketData.query.filter_by(
         crypto_id=crypto_id
     ).filter(
+        MarketData.timestamp >= start_time,
         MarketData.open.isnot(None),
         MarketData.high.isnot(None),
         MarketData.low.isnot(None),
         MarketData.close.isnot(None)
     ).order_by(
         MarketData.timestamp.asc()
-    ).limit(50).all()  # Get last 50 candles
+    )
+    
+    if limit:
+        query = query.limit(limit)
+    
+    market_data = query.all()
     
     if not market_data:
         return jsonify([]), 200

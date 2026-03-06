@@ -1,46 +1,134 @@
-.candlestick-container {
-  width: 100%;
-  max-width: 100%;
+/* CandlestickChart Component Styles */
+
+/* Chart Container */
+.candlestick-chart-container {
+  background: linear-gradient(135deg, #1e293b 0%, #0f172a 100%);
+  border: 1px solid #334155;
+  border-radius: 12px;
+  padding: 1.5rem;
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.3);
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', sans-serif;
 }
 
-.candlestick-container .recharts-wrapper {
-  outline: none;
-}
-
-.candlestick-container .recharts-surface {
-  background: transparent;
-}
-
-.candlestick-container .recharts-cartesian-axis-tick text {
-  fill: #9ca3af;
+/* Recharts Axis Styling */
+.recharts-xAxis .recharts-cartesian-axis-tick text,
+.recharts-yAxis .recharts-cartesian-axis-tick text {
   font-size: 12px;
+  fill: #94a3b8;
+  font-weight: 500;
 }
 
-.candlestick-container .recharts-legend-wrapper {
-  margin-top: 20px !important;
+.recharts-cartesian-axis-line {
+  stroke: #334155;
+  stroke-width: 1;
+}
+
+.recharts-cartesian-axis-tick-line {
+  stroke: #334155;
+}
+
+/* Grid Styling */
+.recharts-cartesian-grid-horizontal line,
+.recharts-cartesian-grid-vertical line {
+  stroke: #334155;
+  stroke-dasharray: 4 4;
+  opacity: 0.5;
+}
+
+/* Tooltip Styling */
+.recharts-default-tooltip {
+  background-color: #0f172a !important;
+  border: 1px solid #475569 !important;
+  border-radius: 8px !important;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4) !important;
+}
+
+.custom-tooltip {
+  background-color: #0f172a;
+  border: 1px solid #475569;
+  border-radius: 8px;
+  padding: 12px 16px;
+  color: #f1f5f9;
+  font-size: 13px;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4);
+}
+
+.custom-tooltip p {
+  margin: 6px 0;
+  color: #cbd5e1;
+}
+
+.custom-tooltip strong {
+  color: #60a5fa;
+  font-weight: 600;
+}
+
+/* Bar Chart Styling */
+.recharts-bar-rectangle {
+  transition: filter 0.2s ease;
+}
+
+.recharts-bar-rectangle:hover {
+  filter: brightness(1.1);
+}
+
+/* Reference Line Styling */
+.recharts-reference-line-line {
+  stroke: #475569;
+  stroke-width: 1;
+}
+
+/* Legend Styling */
+.recharts-legend-item {
+  color: #cbd5e1 !important;
+  font-size: 13px !important;
+  margin: 8px 16px 0 0 !important;
+}
+
+.recharts-legend-item-text {
+  color: #cbd5e1 !important;
+}
+
+/* Loading/Error State Container */
+.chart-loading-container,
+.chart-error-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 400px;
+  border-radius: 12px;
+  background: linear-gradient(135deg, rgba(30, 41, 59, 0.8) 0%, rgba(15, 23, 42, 0.8) 100%);
+}
+
+.chart-loading-text,
+.chart-error-text {
+  font-size: 16px;
+  font-weight: 500;
+  text-align: center;
+}
+
+.chart-loading-text {
+  color: #94a3b8;
+}
+
+.chart-error-text {
+  color: #ef4444;
+  padding: 20px;
 }
 
 /* Responsive adjustments */
 @media (max-width: 768px) {
-  .candlestick-container {
-    padding: 0;
+  .candlestick-chart-container {
+    padding: 1rem;
   }
 
-  .candlestick-container .grid {
-    grid-template-columns: repeat(2, 1fr) !important;
-  }
-}
-
-@media (max-width: 640px) {
-  .candlestick-container .bg-gray-900 {
-    padding: 1rem !important;
+  .recharts-xAxis .recharts-cartesian-axis-tick text,
+  .recharts-yAxis .recharts-cartesian-axis-tick text {
+    font-size: 11px;
   }
 
-  .candlestick-container .grid {
-    grid-template-columns: 1fr !important;
-  }
-
-  .candlestick-container .recharts-cartesian-axis-tick text {
-    font-size: 10px;
+  .custom-tooltip {
+    font-size: 12px;
+    padding: 8px 12px;
   }
 }

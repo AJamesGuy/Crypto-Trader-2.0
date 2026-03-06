@@ -24,7 +24,7 @@
 .header-left {
   display: flex;
   align-items: center;
-  gap: 1.5rem;
+  gap: 4rem;
   flex: 1;
 }
 
@@ -67,7 +67,7 @@
 .header-right {
   flex: 1;
   display: flex;
-  justify-content: flex-end;
+  justify-content: space-evenly;
 }
 
 /* Dashboard Main Content */

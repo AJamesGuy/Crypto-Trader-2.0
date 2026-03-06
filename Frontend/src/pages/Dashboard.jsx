@@ -15,8 +15,6 @@ const Dashboard = () => {
   const [marketLoading, setMarketLoading] = useState(true)
   const [balanceLoading, setBalanceLoading] = useState(true)
   const [selectedCrypto, setSelectedCrypto] = useState(null)
-  const [candleData, setCandleData] = useState([])
-  const [candleLoading, setCandleLoading] = useState(false)
 
   useEffect(() => {
     if (!user?.id || !token) return
@@ -30,7 +28,6 @@ const Dashboard = () => {
         const btc = data?.find(c => c.symbol === 'BTC')
         if (btc && !selectedCrypto) {
           setSelectedCrypto(btc)
-          fetchCandleData(btc.id)
         }
       } catch (err) {
         console.error('Error fetching cryptos:', err)
@@ -79,40 +76,16 @@ const Dashboard = () => {
     }
   }, [user?.id, token])
 
-  const fetchCandleData = async (cryptoId) => {
-    setCandleLoading(true)
-    try {
-      const data = await dashboardAPI.getCandleData(cryptoId, '24h')
-      setCandleData(data || [])
-    } catch (err) {
-      console.error('Error fetching candle data:', err)
-      setCandleData([])
-    } finally {
-      setCandleLoading(false)
-    }
-  }
+
 
   const handleCryptoSelect = (crypto) => {
     setSelectedCrypto(crypto)
-    fetchCandleData(crypto.id)
   }
 
   const handleSearch = async (crypto) => {
     try {
       const marketData = await dashboardAPI.getCryptoMarketData(crypto.id)
       setSelectedCrypto(marketData)
-      
-      // Fetch candlestick data
-      setCandleLoading(true)
-      try {
-        const data = await dashboardAPI.getCandleData(crypto.id, '24h')
-        setCandleData(data || [])
-      } catch (err) {
-        console.error('Error fetching candle data:', err)
-        setCandleData([])
-      } finally {
-        setCandleLoading(false)
-      }
     } catch (err) {
       console.error('Error fetching market data for crypto:', err)
       setSelectedCrypto(crypto)
@@ -144,17 +117,14 @@ const Dashboard = () => {
       <div className="dashboard-main">
         {/* Chart Section */}
         <div className="chart-section">
-          {selectedCrypto ? (
-            !candleLoading && candleData.length > 0 ? (
-              <CandlestickChart 
-                data={candleData} 
-                cryptoName={selectedCrypto.name || selectedCrypto.symbol}
-                timeframe="24h"
-              />
-            ) : (
-              <div className="chart-loading">Loading chart data...</div>
-            )
-          ) : null}
+          {selectedCrypto && (
+            <CandlestickChart 
+              cryptoId={selectedCrypto.id}
+              timeframe="24h"
+              width={800}
+              height={400}
+            />
+          )}
         </div>
 
         {/* Sidebar */}
@@ -182,7 +152,7 @@ const Dashboard = () => {
                   >
                     <div className="crypto-info">
                       <span className="crypto-symbol">{crypto.symbol}</span>
-                      <span className="crypto-price">${crypto.current_price?.toFixed(2)}</span>
+                      <span className="crypto-price">${crypto.price?.toFixed(2)}</span>
                     </div>
                   </div>
                 ))}
